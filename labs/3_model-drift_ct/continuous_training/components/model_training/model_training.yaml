@@ -1,0 +1,23 @@
+$schema: https://azuremlschemas.azureedge.net/latest/commandComponent.schema.json
+name: wine_quality_random_forest_classifier
+display_name: Training Random Forest Classifier
+version: 1
+type: command
+inputs:
+  input_data:
+    type: uri_file
+    description: Prepared wine quality dataset CSV file
+outputs:
+  model_output:
+    type: uri_file
+    description: Trained model output in .pkl format
+  metrics_output:
+    type: uri_file
+    description: Model evaluation metrics (F1 score)
+code: ./
+environment: azureml://registries/azureml/environments/sklearn-1.5/versions/26
+command: >-
+  python model_training.py 
+  --input_data ${{inputs.input_data}} 
+  --model_output ${{outputs.model_output}} 
+  --metrics_output ${{outputs.metrics_output}}

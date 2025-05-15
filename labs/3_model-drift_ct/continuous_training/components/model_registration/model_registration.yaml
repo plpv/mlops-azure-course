@@ -1,0 +1,23 @@
+$schema: https://azuremlschemas.azureedge.net/latest/commandComponent.schema.json
+name: wine_quality_model_registration
+display_name: Wine Quality Model Registration
+version: 1
+type: command
+inputs:
+  drift_detected:
+    type: uri_file
+    description: Data drift detection result (JSON)
+  model_file:
+    type: uri_file
+    description: Trained model file to register (.pkl)
+outputs:
+  registration_result:
+    type: uri_file
+    description: Model registration result with details
+code: ./
+environment: azureml://registries/azureml/environments/sklearn-1.5/versions/26
+command: >-
+  python model_registration.py 
+  --model_file ${{inputs.model_file}}
+  --drift_detected ${{inputs.drift_detected}}
+  --registration_result ${{outputs.registration_result}}
