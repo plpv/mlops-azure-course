@@ -1,0 +1,26 @@
+$schema: https://azuremlschemas.azureedge.net/latest/commandComponent.schema.json
+type: command
+name: data_preparation
+version: "1"
+description: Prepare wine quality data by cleaning and transforming
+tags:
+  - data-preparation
+  - data-cleaning
+
+inputs:
+  input:
+    type: uri_file
+    description: Input raw data file
+
+outputs:
+  prepared_data:
+    type: uri_file
+    description: Cleaned and transformed data file
+
+code: .
+environment: azureml://registries/azureml/environments/sklearn-1.5/versions/26
+
+command: >-
+  python data_preparation.py
+  --input ${{inputs.input}}
+  --prepared_data ${{outputs.prepared_data}}

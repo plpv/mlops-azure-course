@@ -2,7 +2,7 @@
 
 This course is being taught at as part of Ensta
 
-<img src=https://www.isae-supaero.fr/local/cache-vignettes/L190xH102/siteon0-e5814.png width="150">
+<img src=https://upload.wikimedia.org/wikipedia/commons/4/45/Logo_ENSTA_Paris.jpg width="150">
 
 This course is designed to be held during 3 classes lasting 3 hours each. This course will span over 9 hours.
 

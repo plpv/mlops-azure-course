@@ -1,0 +1,23 @@
+$schema: https://azuremlschemas.azureedge.net/latest/commandComponent.schema.json
+name: discriminator_drift_detector
+display_name: Data Drift Detector (Discriminator)
+version: 1
+type: command
+inputs:
+  historical_data:
+    type: uri_file
+    description: Historical baseline dataset
+  current_data:
+    type: uri_file
+    description: Current dataset to check for drift
+outputs:
+  training_needed:
+    type: uri_file
+    description: Boolean flag indicating if retraining is needed (JSON)
+code: ./
+environment: azureml://registries/azureml/environments/sklearn-1.5/versions/26
+command: >-
+  python drift_detection.py 
+  --historical_data ${{inputs.historical_data}}
+  --current_data ${{inputs.current_data}}
+  --output_path ${{outputs.training_needed}}
