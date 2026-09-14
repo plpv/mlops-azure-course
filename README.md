@@ -28,13 +28,9 @@ The labs are configured to run with python 3.11.0
 ### Evaluation
 
 Hands-on implementation on notebooks that will be assessed by the teacher.
-  
+
 ## Acknowledgments
 
-This lecture was built by Headmind Partners AI
+These are the lab materials for the MLOps course I teach as part of Ensta, developed in collaboration with HeadMind Partners AI. Thanks to the teachers of Supaero for their confidence, especially Emmanuel Rachelson and Dennis Wilson.
 
-We thank the teachers of Supaero for their confidence, especially Emmanuel Rachelson and Dennis Wilson.
-
-## License
-
-All the code in this repository belongs to <img src=https://join.headmind.com/wp-content/uploads/2021/12/Logo-HeadMind-Partners-PNG-BLEU.png width="170">
+Shared here for educational purposes.
